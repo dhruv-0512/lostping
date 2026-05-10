@@ -171,10 +171,7 @@ lostping/
 │   └── report/
 │       ├── json_report.py
 │       ├── map.py
-│       └── html_report.py
-├── data/
-│   ├── raw/
-│   └── processed/
+│       └── html_report.py   
 ├── outputs/
 │   ├── maps/
 │   └── reports/
