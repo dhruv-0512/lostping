@@ -175,6 +175,9 @@ lostping/
 ├── outputs/
 │   ├── maps/
 │   └── reports/
+├── screenshots/
+│   ├── maps.htmlp
+│   └── reports.html
 ├── pyproject.toml
 └── README.md
 ```
