@@ -1,0 +1,11 @@
+# create .gitignore
+echo "data/raw/*.csv
+data/raw/*.zst
+data/processed/
+outputs/
+__pycache__/
+*.egg-info/
+.env" > .gitignore
+
+git add .gitignore
+git commit -m "add gitignore"

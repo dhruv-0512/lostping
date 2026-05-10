@@ -1,0 +1,2 @@
+[console_scripts]
+lostping = lostping.cli:main

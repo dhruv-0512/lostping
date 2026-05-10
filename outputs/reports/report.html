@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lostping — ais-2024-01-03.csv</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #111; color: #ddd; font-family: 'Courier New', monospace; }
+    .header { background: #0a0a0a; border-bottom: 1px solid #222; padding: 20px 32px; }
+    .header h1 { font-size: 22px; letter-spacing: 3px; color: #fff; }
+    .header h1 span { color: #FF6600; }
+    .meta { color: #555; font-size: 12px; margin-top: 4px; }
+    .stats { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+    .stat { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; padding: 12px 20px; min-width: 120px; }
+    .stat-val { font-size: 28px; font-weight: bold; color: #FF6600; }
+    .stat-label { font-size: 11px; color: #666; margin-top: 2px; letter-spacing: 1px; }
+    .map-link { margin-top: 12px; font-size: 13px; }
+    .table-wrap { padding: 24px 32px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: #0d0d0d; border-bottom: 2px solid #333; }
+    thead th { padding: 10px 12px; text-align: left; color: #666; font-size: 11px;
+                letter-spacing: 1px; font-weight: normal; white-space: nowrap; cursor: pointer; }
+    thead th:hover { color: #aaa; }
+    tbody tr:hover { background: #252525 !important; }
+    .footer { padding: 20px 32px; color: #333; font-size: 11px; border-top: 1px solid #1a1a1a; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>lost<span>ping</span></h1>
+  <div class="meta">generated 2026-05-09 15:36:26 UTC &nbsp;|&nbsp; source: ais-2024-01-03.csv &nbsp;|&nbsp; threshold: 50.0</div>
+  <div class="stats">
+    <div class="stat"><div class="stat-val">34</div><div class="stat-label">FLAGGED</div></div>
+    <div class="stat"><div class="stat-val">4621</div><div class="stat-label">ANALYSED</div></div>
+    <div class="stat"><div class="stat-val">73</div><div class="stat-label">MAX SCORE</div></div>
+    <div class="stat"><div class="stat-val">56.4</div><div class="stat-label">MEAN SCORE</div></div>
+    <div class="stat"><div class="stat-val">0.7%</div><div class="stat-label">FLAG RATE</div></div>
+  </div>
+  <div class="map-link"><a href="..\maps\gulf.html" style="color:#3498db; text-decoration:none;">🗺 Open Interactive Map</a></div>
+</div>
+
+<div class="table-wrap">
+  <table id="report-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">VESSEL ↕</th>
+        <th onclick="sortTable(1)">MMSI ↕</th>
+        <th onclick="sortTable(2)">TYPE ↕</th>
+        <th onclick="sortTable(3)">RISK SCORE ↕</th>
+        <th>SIGNALS</th>
+        <th>REASON</th>
+        <th onclick="sortTable(6)">TIMESPAN ↕</th>
+        <th onclick="sortTable(7)">PINGS / EVENTS ↕</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF0000; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF0000; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">HIGH</span>
+        JET 1
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368120080</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">50</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF0000; width:73.3px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF0000; font-weight:bold; margin-left:6px;">73.3</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.80; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.80</span> <span style="background:#e67e22; opacity:0.86; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.86</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.45; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.45</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 14.8h &bull; erratic speed &bull; erratic heading &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 01:15:28<br>2024-01-03 17:44:15</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        43<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF0000; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF0000; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">HIGH</span>
+        BIG CAT EXPRESS
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">366915910</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">40</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF0000; width:70.1px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF0000; font-weight:bold; margin-left:6px;">70.1</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.58; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.58</span> <span style="background:#e67e22; opacity:0.79; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.79</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.48; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.48</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:34:54<br>2024-01-03 23:47:01</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        477<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF6600; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF6600; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">ELEVATED</span>
+        MRS NEDRA
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367434630</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">69</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF6600; width:66.5px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF6600; font-weight:bold; margin-left:6px;">66.5</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.57; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.57</span> <span style="background:#e67e22; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.84</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.51; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.51</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; speed reversals &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:31:27<br>2024-01-03 23:59:59</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        272<br>
+        <span style="color:#e74c3c;">G:2</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF6600; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF6600; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">ELEVATED</span>
+        KEY WEST EXPRESS
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367098340</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">60</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF6600; width:65.9px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF6600; font-weight:bold; margin-left:6px;">65.9</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.44; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.44</span> <span style="background:#e67e22; opacity:0.73; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.73</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.58; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.58</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:01<br>2024-01-03 23:59:30</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        771<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF6600; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF6600; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">ELEVATED</span>
+        WHISKEY PAPA
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368095350</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF6600; width:65.8px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF6600; font-weight:bold; margin-left:6px;">65.8</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.59; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.59</span> <span style="background:#e67e22; opacity:0.54; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.54</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.78; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.78</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:18<br>2024-01-03 15:29:09</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        78<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF6600; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF6600; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">ELEVATED</span>
+        TIMOTHY V
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367761850</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">90</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF6600; width:60.3px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF6600; font-weight:bold; margin-left:6px;">60.3</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.70; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.70</span> <span style="background:#e67e22; opacity:0.57; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.57</span> <span style="background:#f39c12; opacity:0.23; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.23</span> <span style="background:#9b59b6; opacity:0.96; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.96</span> <span style="background:#3498db; opacity:0.65; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.65</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 12.1h &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:05<br>2024-01-03 21:08:52</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        138<br>
+        <span style="color:#e74c3c;">G:2</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FF6600; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FF6600; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">ELEVATED</span>
+        HOT WHEELS II
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338395735</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">39</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FF6600; width:60.2px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FF6600; font-weight:bold; margin-left:6px;">60.2</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.91; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.91</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:0.98; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.98</span> <span style="background:#3498db; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.60</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; erratic heading &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 15:30:03<br>2024-01-03 20:35:01</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        36<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        GALILEO
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368225850</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">30</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:59.5px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">59.5</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.86; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.86</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.67; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.67</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 15:24:40<br>2024-01-03 20:55:31</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        305<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        SPECIAL ED
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338361369</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:57.8px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">57.8</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.32; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.32</span> <span style="background:#e67e22; opacity:0.59; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.59</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:0.89; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.89</span> <span style="background:#3498db; opacity:0.66; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.66</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 01:06:49<br>2024-01-03 20:06:49</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        41<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        COLORADO BLUE
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368147000</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:57.6px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">57.6</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.86; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.86</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.84</span> <span style="background:#3498db; opacity:0.72; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.72</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 14:06:31<br>2024-01-03 21:55:15</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        205<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        SEWELLS POINT
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367306860</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">52</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:57.4px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">57.4</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 1.00</span> <span style="background:#e67e22; opacity:0.21; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.21</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.98; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.98</span> <span style="background:#3498db; opacity:0.36; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.36</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 21.2h &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:08<br>2024-01-03 23:58:51</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        140<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        YANKEE FREEDOM III
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367544620</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">60</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:56.6px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">56.6</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.22; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.22</span> <span style="background:#e67e22; opacity:0.73; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.73</span> <span style="background:#f39c12; opacity:0.60; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.60</span> <span style="background:#9b59b6; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.84</span> <span style="background:#3498db; opacity:0.47; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.47</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; open-ocean stop &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 10:22:09<br>2024-01-03 22:25:11</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        360<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        ARATA
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368024380</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">60</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:56.3px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">56.3</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.81; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.81</span> <span style="background:#e67e22; opacity:0.47; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.47</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.71; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.71</span> <span style="background:#3498db; opacity:0.33; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.33</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 14.1h &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:08<br>2024-01-03 23:58:19</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        84<br>
+        <span style="color:#e74c3c;">G:2</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        LANCE C
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368314920</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">60</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:56.2px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">56.2</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.54; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.54</span> <span style="background:#e67e22; opacity:0.69; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.69</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.62; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.62</span> <span style="background:#3498db; opacity:0.47; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.47</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:30:51<br>2024-01-03 23:59:38</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        173<br>
+        <span style="color:#e74c3c;">G:2</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        SAN JACINTO
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338457389</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">90</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:55.9px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">55.9</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.92; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.92</span> <span style="background:#e67e22; opacity:0.25; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.25</span> <span style="background:#f39c12; opacity:0.37; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.37</span> <span style="background:#9b59b6; opacity:0.87; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.87</span> <span style="background:#3498db; opacity:0.50; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.50</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 17.0h &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:01:00<br>2024-01-03 23:57:51</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        202<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        SONNY COOK
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">366989480</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">31</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:55.4px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">55.4</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.94; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.94</span> <span style="background:#e67e22; opacity:0.24; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.24</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.86; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.86</span> <span style="background:#3498db; opacity:0.48; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.48</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 17.4h &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:02<br>2024-01-03 23:59:02</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        343<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        TWEENER
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">366797330</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:54.7px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">54.7</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.84</span> <span style="background:#e67e22; opacity:0.31; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.31</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.85; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.85</span> <span style="background:#3498db; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.35</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 15.6h &bull; erratic heading &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:05<br>2024-01-03 20:12:02</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        42<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        VIRGINIA GIRL
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338215133</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:54.2px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">54.2</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.25; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.25</span> <span style="background:#e67e22; opacity:0.70; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.70</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.84</span> <span style="background:#3498db; opacity:0.71; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.71</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:37:36<br>2024-01-03 23:58:28</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        252<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        ML GROVE
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368054660</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">16</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:54.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">54.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.97; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.97</span> <span style="background:#e67e22; opacity:0.27; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.27</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.79; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.79</span> <span style="background:#3498db; opacity:0.28; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.28</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 17.1h &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:15:22<br>2024-01-03 23:47:32</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        38<br>
+        <span style="color:#e74c3c;">G:2</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        BUBBA E
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368248090</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">52</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:53.9px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">53.9</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.83; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.83</span> <span style="background:#e67e22; opacity:0.27; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.27</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.91; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.91</span> <span style="background:#3498db; opacity:0.34; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.34</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 15.3h &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:52<br>2024-01-03 23:52:35</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        247<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        CAPT CURTIS
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368021320</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">52</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:53.7px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">53.7</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.85; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.85</span> <span style="background:#e67e22; opacity:0.25; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.25</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.93; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.93</span> <span style="background:#3498db; opacity:0.30; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.30</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 15.8h &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:04:30<br>2024-01-03 23:58:48</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        177<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        TERESA
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338024391</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">99</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:53.6px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">53.6</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.81; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.81</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.63; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.63</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 12:47:01<br>2024-01-03 23:31:00</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        457<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        DEUCE ARMENTOR
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367446540</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">69</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:53.5px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">53.5</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.13</span> <span style="background:#e67e22; opacity:0.87; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.87</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.88; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.88</span> <span style="background:#3498db; opacity:0.39; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.39</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; erratic heading &bull; speed reversals &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 03:21:46<br>2024-01-03 19:45:36</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        279<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        FAST RUNNER
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367746000</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">70</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.7px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.7</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.61; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.61</span> <span style="background:#f39c12; opacity:0.75; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.75</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.44; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.44</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; port loitering &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:02<br>2024-01-03 23:57:16</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        819<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:4</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        SIMPLE MAN
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338485553</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.7px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.7</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.79; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.79</span> <span style="background:#f39c12; opacity:0.39; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.39</span> <span style="background:#9b59b6; opacity:0.95; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.95</span> <span style="background:#3498db; opacity:0.70; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.70</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; EEZ boundary hugging</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 12:03:40<br>2024-01-03 22:14:09</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        85<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        RV EXPLORER
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338210722</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">34</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.54; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.54</span> <span style="background:#e67e22; opacity:0.56; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.56</span> <span style="background:#f39c12; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.15</span> <span style="background:#9b59b6; opacity:0.77; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.77</span> <span style="background:#3498db; opacity:0.71; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.71</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; speed reversals</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 10:33:26<br>2024-01-03 23:36:47</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        121<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        STENA ICEMAX
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">235092459</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">90</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.80; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.80</span> <span style="background:#e67e22; opacity:0.36; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.36</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.74; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.74</span> <span style="background:#3498db; opacity:0.31; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.31</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS dark 14.8h &bull; erratic heading &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:10<br>2024-01-03 22:21:21</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        335<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        KEVIN S. WILL
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">338306834</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">55</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.82; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.82</span> <span style="background:#f39c12; opacity:0.36; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.36</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.52; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.52</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 14:36:55<br>2024-01-03 16:01:49</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        78<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        CHAMPION
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368109220</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:52.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">52.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.81; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.81</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.92; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.92</span> <span style="background:#3498db; opacity:0.58; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.58</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; erratic heading &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:03:48<br>2024-01-03 23:52:46</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        278<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        BREANNA GRACE
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368169020</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">37</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:51.9px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">51.9</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.84</span> <span style="background:#f39c12; opacity:0.35; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.35</span> <span style="background:#9b59b6; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.84</span> <span style="background:#3498db; opacity:0.71; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.71</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; open-ocean stop</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 11:28:19<br>2024-01-03 15:57:25</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        130<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        CHIEF
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367314340</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">62</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:50.6px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">50.6</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.31; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.31</span> <span style="background:#e67e22; opacity:0.74; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.74</span> <span style="background:#f39c12; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.14</span> <span style="background:#9b59b6; opacity:0.74; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.74</span> <span style="background:#3498db; opacity:0.65; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.65</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">AIS gaps detected &bull; erratic speed &bull; speed reversals</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:00<br>2024-01-03 23:59:30</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        689<br>
+        <span style="color:#e74c3c;">G:1</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        YBOR
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">368183570</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">57</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:50.2px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">50.2</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.72; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.72</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 1.00</span> <span style="background:#3498db; opacity:0.56; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.56</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 00:00:10<br>2024-01-03 23:58:38</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        560<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:3</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1a1a1a; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        ISLAND ACE
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">367734950</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">30</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:50.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">50.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.79; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.79</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.81; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.81</span> <span style="background:#3498db; opacity:0.61; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.61</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 06:12:36<br>2024-01-03 07:07:39</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        15<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:1</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    <tr style="background:#1f1f1f; border-bottom:1px solid #2a2a2a;">
+      <td style="padding:10px 12px; color:#FFD700; font-weight:bold; font-size:13px; white-space:nowrap;">
+        <span style="background:#FFD700; color:black; padding:2px 6px; border-radius:3px; font-size:10px; margin-right:6px;">MODERATE</span>
+        CG29458
+      </td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">369990458</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:12px;">51</td>
+      <td style="padding:10px 8px;">
+    <div style="background:#2a2a2a; border-radius:3px; height:8px; width:100px; display:inline-block; vertical-align:middle;">
+      <div style="background:#FFD700; width:50.0px; height:8px; border-radius:3px;"></div>
+    </div>
+    <span style="color:#FFD700; font-weight:bold; margin-left:6px;">50.0</span>
+    </td>
+      <td style="padding:10px 8px; color:#ccc; font-size:11px;"><span style="background:#e74c3c; opacity:0.20; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">gap 0.00</span> <span style="background:#e67e22; opacity:0.84; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">traj 0.84</span> <span style="background:#f39c12; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">spatial 0.40</span> <span style="background:#9b59b6; opacity:0.85; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">iso 0.85</span> <span style="background:#3498db; opacity:0.40; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">zscore 0.40</span> <span style="background:#1abc9c; opacity:1.00; color:white; padding:2px 7px; border-radius:10px; font-size:11px; margin:1px; display:inline-block;">loiter 1.00</span></td>
+      <td style="padding:10px 8px; color:#888; font-size:11px; max-width:280px;">erratic speed &bull; speed reversals &bull; port loitering</td>
+      <td style="padding:10px 8px; color:#666; font-size:11px; white-space:nowrap;">2024-01-03 17:10:23<br>2024-01-03 20:20:52</td>
+      <td style="padding:10px 8px; color:#aaa; font-size:11px; text-align:center;">
+        120<br>
+        <span style="color:#e74c3c;">G:0</span>
+        <span style="color:#f39c12; margin:0 3px;">S:2</span>
+        <span style="color:#9b59b6;">L:1</span>
+      </td>
+    </tr>
+    
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  lostping &nbsp;|&nbsp; 34 vessels flagged from 4621 analysed &nbsp;|&nbsp; ais-2024-01-03.csv
+</div>
+
+<script>
+function sortTable(col) {
+  const table = document.getElementById("report-table");
+  const rows  = Array.from(table.querySelectorAll("tbody tr"));
+  const asc   = table.dataset.sortCol == col && table.dataset.sortDir == "asc";
+  rows.sort((a, b) => {
+    const ta = a.cells[col]?.innerText.trim() || "";
+    const tb = b.cells[col]?.innerText.trim() || "";
+    const na = parseFloat(ta), nb = parseFloat(tb);
+    if (!isNaN(na) && !isNaN(nb)) return asc ? na - nb : nb - na;
+    return asc ? ta.localeCompare(tb) : tb.localeCompare(ta);
+  });
+  rows.forEach(r => table.querySelector("tbody").appendChild(r));
+  table.dataset.sortCol = col;
+  table.dataset.sortDir = asc ? "desc" : "asc";
+}
+</script>
+
+</body>
+</html>

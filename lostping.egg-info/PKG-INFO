@@ -1,0 +1,267 @@
+Metadata-Version: 2.4
+Name: lostping
+Version: 0.1.0
+Summary: AIS vessel anomaly detection — find ships behaving suspiciously
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: folium>=0.15
+Requires-Dist: pyarrow>=14.0
+Requires-Dist: zstandard>=0.21
+
+# lostping
+
+**AIS dark-vessel detection pipeline.**  
+Ingests raw AIS CSVs, engineers maritime anomaly features, scores every vessel 0–100, and produces interactive maps + sortable HTML reports.
+
+```
+7.3 M pings · 4,621 vessels · 34 flagged · top vessel JET 1 scored 73.3
+```
+
+---
+
+## Install
+
+```bash
+git clone https://github.com/your-org/lostping.git
+cd lostping
+pip install -e ".[dev]"
+```
+
+Requires Python ≥ 3.10.
+
+---
+
+## Quick start
+
+```bash
+# Full pipeline — ingest → features → models → reports
+lostping run --input ./data/ais/ --output ./out/
+
+# Narrow to a region and raise the flag threshold
+lostping run \
+  --input   ./data/ais/ \
+  --output  ./out/ \
+  --region  gulf_of_mexico \
+  --threshold 60
+
+# Re-score without re-ingesting (fast iteration on model params)
+lostping score --matrix ./out/features.parquet --output ./out/
+
+# Rebuild the map from saved data
+lostping map --pings ./out/pings.parquet --flagged ./out/flagged.json
+```
+
+Outputs land in `--output`:
+
+| File | Contents |
+|---|---|
+| `flagged.json` | Full event list per flagged vessel |
+| `map.html` | Dark Folium map — coloured tracks, gap markers, loiter circles |
+| `report.html` | Sortable dark-theme summary table |
+
+---
+
+## Pipeline
+
+```
+AIS CSVs
+  └─ loader.py       chunk-read, region filter, column clean
+  └─ cleaner.py      drop bad MMSIs / dupes / sparse tracks
+        │
+        ├─ gaps.py          AIS blackout detection + STS zone proximity
+        ├─ trajectory.py    speed variance, heading erraticism, reversals
+        └─ spatial.py       port loitering, open-ocean stops, EEZ hugging
+              │
+              └─ builder.py      join → one feature matrix per vessel
+                    │
+                    ├─ isolation.py   Isolation Forest per vessel type
+                    ├─ loiter.py      DBSCAN — vessels orbiting a fixed point
+                    └─ zscore.py      z-score each vessel against type peers
+                          │
+                          └─ scorer.py   combine → risk score 0–100 + reason string
+                                │
+                                ├─ json_report.py
+                                ├─ map.py
+                                └─ html_report.py
+```
+
+### Ingest
+
+`loader.py` reads CSVs in configurable chunks (default 100 k rows), filters to a named region bounding box, and normalises column names.  
+`cleaner.py` drops rows with invalid MMSIs (non-9-digit, reserved ranges), exact duplicates, and vessels with fewer than `--min-pings` position reports.
+
+### Features
+
+| Module | Signals |
+|---|---|
+| `gaps.py` | AIS blackout duration, blackout count, proximity to known STS transfer zones during gaps |
+| `trajectory.py` | Speed variance, heading erraticism (circular std-dev), reversal count, impossible-speed events |
+| `spatial.py` | Port loiter time, open-ocean stop count, EEZ boundary hugging distance |
+| `builder.py` | Left-joins all three onto a single vessel-level feature matrix |
+
+### Models
+
+| Module | Method | Purpose |
+|---|---|---|
+| `isolation.py` | Isolation Forest | Multivariate outlier per vessel type |
+| `loiter.py` | DBSCAN on lat/lon | Detects vessels orbiting a fixed location |
+| `zscore.py` | Per-type z-score | Flags statistical outliers within peer group |
+| `scorer.py` | Weighted sum | Combines all signals → `risk_score` ∈ [0, 100] + `reason` string |
+
+Vessels above `--threshold` (default 50) are written to `flagged.json`.
+
+### Reports
+
+`map.py` builds a dark-background Folium map. Track colour encodes risk score (green → amber → red). Gap events are marked with circles; loiter clusters get filled rings.  
+`html_report.py` renders a sortable table — click any column header to re-rank.
+
+---
+
+## CLI reference
+
+```
+lostping run [OPTIONS]
+
+  --input,      -i   DIR or CSV   AIS data source (required)
+  --output,     -o   DIR          Report destination  [./lostping_out]
+  --region,     -r   NAME         Named region filter (e.g. gulf_of_mexico)
+  --threshold,  -t   FLOAT        Flag threshold 0–100  [50]
+  --chunk-size       INT          CSV rows per chunk  [100000]
+  --min-pings        INT          Minimum pings to keep a track  [10]
+  --sts-zones        PATH         STS zone GeoJSON (optional)
+  --eez              PATH         EEZ boundary GeoJSON (optional)
+  --verbose,    -v               Print full tracebacks on error
+
+lostping score [OPTIONS]
+
+  --matrix,     -m   PATH        features.parquet from a previous run (required)
+  --output,     -o   DIR         [./lostping_out]
+  --threshold,  -t   FLOAT       [50]
+
+lostping map [OPTIONS]
+
+  --pings        PATH   Pings parquet (required)
+  --flagged      PATH   flagged.json (required)
+  --output, -o   DIR    [./lostping_out]
+```
+
+---
+
+## Data
+
+Source: [Marine Cadastre (NOAA)](https://marinecadastre.gov/ais/) — free, no account needed.  
+Format: daily `.csv.zst` files (Zstandard compressed), 2024 onwards.
+
+```
+mmsi, base_date_time, lon, lat, sog, cog, heading,
+vessel_name, imo, call_sign, vessel_type, status,
+length, width, draft, cargo, transceiver
+```
+
+Decompress with `zstd -d AIS_2024_01_03.csv.zst`.  
+Gulf of Mexico zone recommended for first runs — good mix of tankers, cargo, and fishing vessels.
+
+Optional boundary files (drop into `data/boundaries/`):
+
+- EEZ shapefile — passed via `--eez`
+- STS zone GeoJSON — passed via `--sts-zones` (five zones hardcoded by default: Gulf of Mexico, Strait of Hormuz, Gulf of Aden, East China Sea, Black Sea)
+
+---
+
+## Scoring
+
+```python
+risk = (0.40 * isolation_score
+      + 0.35 * gap_score
+      + 0.25 * loiter_score) * 100
+```
+
+| Signal | Module | Method |
+|---|---|---|
+| Trajectory anomaly | `isolation.py` | Isolation Forest per vessel type |
+| AIS gap | `gaps.py` | Time-diff between pings + STS zone proximity |
+| Loitering | `loiter.py` | DBSCAN spatial clustering |
+
+A gap longer than 8 h gets a 1.3× severity multiplier. Scores are capped at 100.  
+The `reason` field in `flagged.json` is a human-readable string explaining which signals fired and why.
+
+---
+
+## Project layout
+
+```
+lostping/
+├── lostping/
+│   ├── cli.py
+│   ├── ingest/
+│   │   ├── loader.py
+│   │   └── cleaner.py
+│   ├── features/
+│   │   ├── gaps.py
+│   │   ├── trajectory.py
+│   │   ├── spatial.py
+│   │   └── builder.py
+│   ├── models/
+│   │   ├── isolation.py
+│   │   ├── loiter.py
+│   │   ├── zscore.py
+│   │   └── scorer.py
+│   └── report/
+│       ├── map.py
+│       ├── json_report.py
+│       └── html_report.py
+├── data/
+│   ├── raw/            ← drop CSVs here
+│   ├── processed/
+│   └── boundaries/     ← EEZ / STS GeoJSON
+├── outputs/
+│   ├── maps/
+│   └── reports/
+├── pyproject.toml
+└── README.md
+```
+
+---
+
+## Development
+
+```bash
+pip install -e ".[dev]"
+
+# lint + format
+ruff check .
+ruff format .
+
+# type check
+mypy .
+
+# tests
+pytest
+pytest --cov --cov-report=term-missing
+```
+
+Pre-commit hooks (optional):
+
+```bash
+pre-commit install
+```
+
+---
+
+## Use cases
+
+This pipeline was designed for:
+
+- **Sanctions monitoring** — tankers going dark near known transfer zones
+- **Smuggling detection** — cargo vessels with unexplained open-ocean stops
+- **Illegal fishing (IUU)** — fishing vessels loitering inside closed EEZs
+- **Maritime insurance** — risk flagging for underwriting
+
+---
+
+## License
+
+MIT
